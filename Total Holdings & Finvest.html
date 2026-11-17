@@ -1,0 +1,515 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Total Holdings &amp; Finvest</title>
+<meta name="description" content="Total Holdings & Finvest Private Limited — RBI-registered NBFC.">
+<style>
+  :root{
+    --ink:#0b1f3a;          /* deep navy */
+    --ink-2:#12315c;
+    --paper:#f6f4ee;        /* warm off-white */
+    --surface:#ffffff;
+    --surface-2:#eef1f6;
+    --line:#dfe3ea;
+    --muted:#5a6472;
+    --brand:#0e4c92;        /* institutional blue */
+    --brand-2:#1769c4;
+    --gold:#c79a3a;         /* restrained gold */
+    --gold-soft:#f0e4c6;
+    --good:#1f7a52;
+    --shadow:0 1px 2px rgba(11,31,58,.06),0 10px 30px rgba(11,31,58,.08);
+    --radius:14px;
+    --maxw:1180px;
+    --serif:"Fraunces",Georgia,"Times New Roman",serif;
+    --sans:"Manrope",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  }
+  :root:not([data-theme="light"]){
+    @media (prefers-color-scheme:dark){
+      --ink:#eaf0fb; --ink-2:#c7d4ea;
+      --paper:#0a1526; --surface:#0f1d33; --surface-2:#132444;
+      --line:#223555; --muted:#9fb0c9;
+      --brand:#4d9bf0; --brand-2:#6fb2ff;
+      --gold:#e0bd63; --gold-soft:#2a2410;
+      --shadow:0 1px 2px rgba(0,0,0,.4),0 12px 34px rgba(0,0,0,.45);
+    }
+  }
+  :root[data-theme="dark"]{
+    --ink:#eaf0fb; --ink-2:#c7d4ea;
+    --paper:#0a1526; --surface:#0f1d33; --surface-2:#132444;
+    --line:#223555; --muted:#9fb0c9;
+    --brand:#4d9bf0; --brand-2:#6fb2ff;
+    --gold:#e0bd63; --gold-soft:#2a2410;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 12px 34px rgba(0,0,0,.45);
+  }
+
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);
+    font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.12;letter-spacing:-.01em;text-wrap:balance;margin:0}
+  p{margin:0}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding-inline:20px}
+  .eyebrow{font-family:var(--sans);text-transform:uppercase;letter-spacing:.16em;
+    font-size:12px;font-weight:700;color:var(--brand)}
+  .btn{display:inline-flex;align-items:center;gap:.5em;font-weight:700;font-size:15px;
+    padding:13px 22px;border-radius:999px;border:1.5px solid transparent;cursor:pointer;
+    transition:transform .15s ease,box-shadow .2s ease,background .2s ease}
+  .btn:hover{transform:translateY(-2px)}
+  .btn-primary{background:var(--brand);color:#fff;box-shadow:0 8px 20px rgba(14,76,146,.28)}
+  .btn-ghost{background:transparent;border-color:var(--line);color:var(--ink)}
+  .btn-gold{background:var(--gold);color:#231b06}
+
+  /* Header */
+  header.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;
+    background:color-mix(in srgb,var(--paper) 88%,transparent);
+    backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  .nav-in{display:flex;align-items:center;gap:20px;height:70px}
+  .brand{display:flex;align-items:center;gap:12px;font-family:var(--serif);
+    font-weight:600;font-size:18px;letter-spacing:-.01em}
+  .mark{width:38px;height:38px;border-radius:10px;flex:0 0 auto;
+    background:linear-gradient(135deg,var(--brand),var(--ink-2));
+    display:grid;place-items:center;color:#fff;font-family:var(--serif);
+    font-weight:600;font-size:19px;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.14)}
+  .brand small{display:block;font-family:var(--sans);font-weight:600;font-size:10.5px;
+    letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:1px}
+  nav.links{margin-left:auto;display:flex;gap:26px;align-items:center}
+  nav.links a{font-size:14.5px;font-weight:600;color:var(--ink-2);position:relative}
+  nav.links a::after{content:"";position:absolute;left:0;bottom:-6px;height:2px;width:0;
+    background:var(--gold);transition:width .2s ease}
+  nav.links a:hover::after{width:100%}
+  .nav-cta{display:flex;gap:10px;align-items:center}
+  .menu-btn{display:none;margin-left:auto;background:none;border:1.5px solid var(--line);
+    border-radius:10px;padding:8px 10px;cursor:pointer;color:var(--ink)}
+  #nav-toggle{display:none}
+
+  /* Hero */
+  .hero{position:relative;overflow:hidden;
+    background:
+      radial-gradient(1100px 500px at 78% -12%,rgba(23,105,196,.20),transparent 60%),
+      linear-gradient(180deg,var(--paper),var(--paper))}
+  .hero-in{display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center;
+    padding-block:78px 66px}
+  .hero h1{font-size:clamp(38px,6vw,68px)}
+  .hero .lede{font-size:clamp(17px,2vw,20px);color:var(--muted);max-width:56ch;margin-top:22px}
+  .hero-cta{display:flex;gap:14px;margin-top:32px;flex-wrap:wrap}
+  .hero-badges{display:flex;gap:22px;margin-top:38px;flex-wrap:wrap}
+  .hbadge{display:flex;flex-direction:column}
+  .hbadge b{font-family:var(--serif);font-size:26px;color:var(--ink)}
+  .hbadge span{font-size:12.5px;color:var(--muted);letter-spacing:.02em}
+
+  /* Hero card */
+  .hero-card{background:var(--surface);border:1px solid var(--line);border-radius:20px;
+    padding:26px;box-shadow:var(--shadow);position:relative}
+  .hero-card::before{content:"";position:absolute;inset:0;border-radius:20px;
+    background:linear-gradient(140deg,rgba(199,154,58,.10),transparent 40%);pointer-events:none}
+  .hc-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
+  .chip{font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--good);background:color-mix(in srgb,var(--good) 14%,transparent);
+    padding:6px 12px;border-radius:999px}
+  .hc-row{display:flex;justify-content:space-between;padding:13px 0;border-bottom:1px dashed var(--line);font-size:14.5px}
+  .hc-row:last-child{border-bottom:0}
+  .hc-row span{color:var(--muted)}
+  .hc-row b{font-weight:700;font-variant-numeric:tabular-nums}
+  .hc-note{margin-top:16px;font-size:12px;color:var(--muted);line-height:1.5}
+
+  /* Ticker */
+  .ticker{background:var(--ink);color:#dce6f5;overflow:hidden;white-space:nowrap;border-block:1px solid rgba(255,255,255,.06)}
+  .ticker .track{display:inline-flex;gap:44px;padding:12px 0;animation:scroll 34s linear infinite;font-size:13.5px;font-weight:600}
+  .ticker .track span{display:inline-flex;gap:10px;align-items:center}
+  .ticker .track span::before{content:"◆";color:var(--gold);font-size:9px}
+  @keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  @media (prefers-reduced-motion:reduce){.ticker .track{animation:none}}
+
+  /* Sections */
+  section{padding-block:76px}
+  .sec-head{max-width:760px;margin-bottom:44px}
+  .sec-head h2{font-size:clamp(28px,4vw,42px);margin-top:12px}
+  .sec-head p{color:var(--muted);margin-top:14px;font-size:17px}
+
+  /* Products */
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+    padding:28px;box-shadow:var(--shadow);transition:transform .18s ease,box-shadow .2s ease}
+  .card:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(11,31,58,.14)}
+  .card .ic{width:48px;height:48px;border-radius:12px;display:grid;place-items:center;
+    background:var(--surface-2);color:var(--brand);margin-bottom:18px}
+  .card .ic svg{width:24px;height:24px}
+  .card h3{font-size:21px;margin-bottom:8px}
+  .card p{color:var(--muted);font-size:14.5px}
+  .card .more{display:inline-flex;align-items:center;gap:6px;margin-top:16px;
+    font-weight:700;font-size:13.5px;color:var(--brand)}
+
+  /* Split about */
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:center}
+  .about-panel{background:var(--ink);color:#eaf0fb;border-radius:20px;padding:40px;
+    background-image:radial-gradient(600px 260px at 90% 0%,rgba(23,105,196,.30),transparent);position:relative;overflow:hidden}
+  .about-panel h3{color:#fff;font-size:24px}
+  .stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:26px}
+  .stat b{font-family:var(--serif);font-size:30px;display:block;color:#fff}
+  .stat span{font-size:12.5px;color:#a7bbdb;letter-spacing:.04em}
+  .checklist{list-style:none;padding:0;margin:22px 0 0;display:grid;gap:14px}
+  .checklist li{display:flex;gap:12px;align-items:flex-start;font-size:15.5px}
+  .checklist svg{flex:0 0 auto;width:22px;height:22px;color:var(--good);margin-top:2px}
+
+  /* Compliance / details table */
+  .facts{background:var(--surface);border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:var(--shadow)}
+  .facts .fhead{background:var(--surface-2);padding:20px 26px;border-bottom:1px solid var(--line);
+    display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+  .facts .fhead h3{font-size:20px}
+  .frow{display:grid;grid-template-columns:230px 1fr;gap:16px;padding:16px 26px;border-bottom:1px solid var(--line);font-size:14.5px}
+  .frow:last-child{border-bottom:0}
+  .frow .k{color:var(--muted);font-weight:600}
+  .frow .v{font-weight:600;font-variant-numeric:tabular-nums}
+
+  /* Directors */
+  .grid-dir{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .dir{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+    padding:26px;box-shadow:var(--shadow);text-align:left}
+  .avatar{width:60px;height:60px;border-radius:50%;display:grid;place-items:center;
+    font-family:var(--serif);font-size:22px;color:#fff;margin-bottom:16px;
+    background:linear-gradient(135deg,var(--brand),var(--ink-2))}
+  .dir h3{font-size:19px}
+  .dir .role{color:var(--brand);font-weight:700;font-size:13px;margin-top:3px}
+  .dir .kv{display:flex;justify-content:space-between;margin-top:14px;padding-top:12px;
+    border-top:1px dashed var(--line);font-size:13px;color:var(--muted)}
+  .dir .kv b{color:var(--ink);font-variant-numeric:tabular-nums}
+  .signtag{display:inline-block;margin-top:12px;font-size:11.5px;font-weight:700;
+    color:var(--good);background:color-mix(in srgb,var(--good) 13%,transparent);
+    padding:4px 10px;border-radius:999px}
+
+  /* CTA band */
+  .band{background:linear-gradient(135deg,var(--ink),var(--ink-2));color:#fff;border-radius:24px;
+    padding:52px;text-align:center;position:relative;overflow:hidden}
+  .band::after{content:"";position:absolute;inset:0;
+    background:radial-gradient(700px 300px at 20% 120%,rgba(199,154,58,.22),transparent)}
+  .band h2{font-size:clamp(26px,4vw,40px);color:#fff;position:relative}
+  .band p{color:#c3d2ea;margin-top:14px;position:relative;max-width:56ch;margin-inline:auto}
+  .band .hero-cta{justify-content:center;position:relative}
+
+  /* Contact */
+  .contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:40px}
+  .cinfo{display:grid;gap:20px}
+  .cinfo .item{display:flex;gap:14px;align-items:flex-start}
+  .cinfo .ic{width:44px;height:44px;border-radius:12px;background:var(--surface-2);
+    display:grid;place-items:center;color:var(--brand);flex:0 0 auto}
+  .cinfo .ic svg{width:20px;height:20px}
+  .cinfo .item b{display:block;font-size:15px}
+  .cinfo .item span{color:var(--muted);font-size:14px}
+  form.enq{background:var(--surface);border:1px solid var(--line);border-radius:20px;
+    padding:30px;box-shadow:var(--shadow);display:grid;gap:16px}
+  .field{display:grid;gap:6px}
+  .field label{font-size:12.5px;font-weight:700;letter-spacing:.04em;color:var(--muted)}
+  .field input,.field select,.field textarea{font-family:inherit;font-size:15px;
+    padding:12px 14px;border:1.5px solid var(--line);border-radius:10px;background:var(--paper);color:var(--ink)}
+  .field input:focus,.field select:focus,.field textarea:focus{outline:2px solid var(--brand);border-color:var(--brand)}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .form-note{font-size:12px;color:var(--muted)}
+  #form-ok{display:none;background:color-mix(in srgb,var(--good) 12%,transparent);
+    border:1px solid color-mix(in srgb,var(--good) 40%,transparent);color:var(--good);
+    padding:12px 14px;border-radius:10px;font-size:14px;font-weight:600}
+
+  /* Footer */
+  footer{background:var(--ink);color:#b9c8e0;padding-block:56px 30px;margin-top:20px}
+  .fgrid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1.2fr;gap:34px}
+  footer h4{color:#fff;font-family:var(--sans);font-size:13px;letter-spacing:.1em;
+    text-transform:uppercase;margin:0 0 14px}
+  footer a,footer li{color:#a7bbdb;font-size:14px}
+  footer ul{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+  footer a:hover{color:#fff}
+  .fbrand{display:flex;align-items:center;gap:12px;color:#fff;font-family:var(--serif);font-size:18px;margin-bottom:14px}
+  .fnote{font-size:13px;color:#8ea3c6;line-height:1.6;max-width:44ch}
+  .fbottom{border-top:1px solid rgba(255,255,255,.1);margin-top:40px;padding-top:22px;
+    display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:12.5px;color:#8296b6}
+  .disclaimer{font-size:11.5px;color:#7788a8;line-height:1.6;margin-top:16px;max-width:100%}
+
+  @media (max-width:920px){
+    .hero-in{grid-template-columns:1fr;gap:36px}
+    .split{grid-template-columns:1fr;gap:34px}
+    .contact-grid{grid-template-columns:1fr;gap:28px}
+    .grid3,.grid-dir{grid-template-columns:1fr 1fr}
+    .fgrid{grid-template-columns:1fr 1fr}
+  }
+  @media (max-width:640px){
+    nav.links,.nav-cta{display:none}
+    .menu-btn{display:block}
+    #nav-toggle:checked ~ nav.links{display:flex;position:absolute;top:70px;left:0;right:0;
+      flex-direction:column;gap:0;background:var(--paper);border-bottom:1px solid var(--line);padding:8px 20px}
+    #nav-toggle:checked ~ nav.links a{padding:14px 0;border-bottom:1px solid var(--line)}
+    .grid3,.grid-dir,.two,.fgrid{grid-template-columns:1fr}
+    .frow{grid-template-columns:1fr;gap:4px}
+    section{padding-block:56px}
+    .band,.about-panel{padding:32px 24px}
+  }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Manrope:wght@500;600;700;800&display=swap">
+
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#top">
+      <span class="mark">T</span>
+      <span>Total&nbsp;Holdings &amp; Finvest
+        <small>NBFC · RBI Registered</small>
+      </span>
+    </a>
+    <input type="checkbox" id="nav-toggle">
+    <label class="menu-btn" for="nav-toggle" aria-label="Toggle menu">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </label>
+    <nav class="links">
+      <a href="#about">About</a>
+      <a href="#leadership">Leadership</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-primary" href="#contact">Get in touch</a>
+    </div>
+  </div>
+</header>
+
+<a id="top"></a>
+<section class="hero" style="padding-block:0">
+  <div class="wrap hero-in">
+    <div>
+      <span class="eyebrow">Non-Banking Financial Company · Est. 2005</span>
+      <h1>Financial strength, built on two decades of trust.</h1>
+      <p class="lede">Total Holdings &amp; Finvest Private Limited is a Mumbai-based NBFC registered with the Reserve Bank of India, offering microfinance lending, loans and investment solutions grounded in disciplined governance.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#leadership">Meet our leadership</a>
+      </div>
+      <div class="hero-badges">
+        <div class="hbadge"><b>2005</b><span>Year incorporated</span></div>
+        <div class="hbadge"><b>20+</b><span>Years in operation</span></div>
+        <div class="hbadge"><b>RBI</b><span>Registered NBFC</span></div>
+      </div>
+    </div>
+    <aside class="hero-card">
+      <div class="hc-top">
+        <div>
+          <div class="eyebrow">Company snapshot</div>
+        </div>
+        <span class="chip">● Active</span>
+      </div>
+      <div class="hc-row"><span>Entity</span><b>Private Limited</b></div>
+      <div class="hc-row"><span>CIN</span><b>U65990MH2005PTC153374</b></div>
+      <div class="hc-row"><span>NBFC Reg. No.</span><b>N-13.01828</b></div>
+      <div class="hc-row"><span>Registered in</span><b>Maharashtra, India</b></div>
+    </aside>
+  </div>
+</section>
+
+<div class="ticker" aria-hidden="true">
+  <div class="track">
+    <span>RBI-registered NBFC</span><span>CIN U65990MH2005PTC153374</span><span>Incorporated 18 May 2005</span><span>NBFC Reg. N-13.01828</span><span>Registered office: Mulund, Mumbai</span>
+    <span>RBI-registered NBFC</span><span>CIN U65990MH2005PTC153374</span><span>Incorporated 18 May 2005</span><span>NBFC Reg. N-13.01828</span><span>Registered office: Mulund, Mumbai</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about" style="background:var(--surface-2)">
+  <div class="wrap split">
+    <div>
+      <span class="eyebrow">About the company</span>
+      <h2 style="font-size:clamp(28px,4vw,42px);margin-top:12px">Two decades of measured, dependable finance.</h2>
+      <p style="color:var(--muted);margin-top:16px;font-size:17px">Incorporated on 18 May 2005 and headquartered in Mulund, Mumbai, Total Holdings &amp; Finvest Private Limited has grown as a privately held NBFC serving investment and lending needs across India.</p>
+      <p style="color:var(--muted);margin-top:14px;font-size:17px">Our approach is deliberately conservative: we grow our book responsibly, hold ourselves to the standards of a regulated financial institution, and treat every rupee entrusted to us with care.</p>
+      <ul class="checklist">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5"/></svg> Registered with the Reserve Bank of India as an NBFC</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5"/></svg> Governed by an experienced, designated board of directors</li>
+      </ul>
+    </div>
+    <div class="about-panel">
+      <span class="eyebrow" style="color:var(--gold)">By the numbers</span>
+      <h3 style="margin-top:10px">A foundation you can measure</h3>
+      <div class="stat-grid">
+        <div class="stat"><b>20+</b><span>Years in operation</span></div>
+        <div class="stat"><b>2005</b><span>Year incorporated</span></div>
+        <div class="stat"><b>RBI</b><span>Registered NBFC</span></div>
+        <div class="stat"><b>3</b><span>Board directors</span></div>
+      </div>
+      <p style="color:#c3d2ea;margin-top:26px;font-size:14.5px"><b style="color:#fff">Grievance Officer:</b> Keval Lodaya · <a href="tel:+912269078319" style="color:#fff;font-weight:700">022-69078319</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- LEADERSHIP -->
+<section id="leadership" style="background:var(--surface-2)">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Board of directors</span>
+      <h2>Stewardship at the top</h2>
+      <p>Our directors bring the oversight and accountability that responsible finance demands.</p>
+    </div>
+    <div class="grid-dir">
+      <article class="dir">
+        <div class="avatar">CL</div>
+        <h3>Chandrakant Virchand Lakhani</h3>
+        <div class="role">Director</div>
+        <span class="signtag">✓ Authorised signatory</span>
+      </article>
+      <article class="dir">
+        <div class="avatar">KL</div>
+        <h3>Keval Suresh Lodaya</h3>
+        <div class="role">Designated Director</div>
+        <span class="signtag">✓ Authorised signatory</span>
+      </article>
+      <article class="dir">
+        <div class="avatar">GM</div>
+        <h3>Gajraj Vinod Mundhada</h3>
+        <div class="role">Director</div>
+        <span class="signtag">✓ Authorised signatory</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section>
+  <div class="wrap">
+    <div class="band">
+      <h2>Let's build the next chapter of your financial journey.</h2>
+      <p>Whether you're seeking credit or investment, our team is ready to understand your needs and respond with clarity.</p>
+      <div class="hero-cta">
+        <a class="btn btn-gold" href="#contact">Talk to our team</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" style="background:var(--surface-2)">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Get in touch</span>
+      <h2>We'd be glad to hear from you</h2>
+      <p>Reach out with an enquiry and a member of our team will follow up.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="cinfo">
+        <div class="item">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6.2-7-11a7 7 0 0114 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+          <div><b>Registered office</b><span>102, 1st Floor, Raja Industrial Estate, P.K. Road, Mulund, Mumbai, Maharashtra 400080</span></div>
+        </div>
+        <div class="item">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16v16H4z" opacity="0"/><path d="M3 5h18v14H3z"/><path d="M3 6l9 6 9-6"/></svg></div>
+          <div><b>Email</b><span><a href="mailto:info@totalholdings.in" style="color:var(--brand);font-weight:700">info@totalholdings.in</a></span></div>
+        </div>
+        <div class="item">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 3H4v5M15 3h5v5M9 21H4v-5M15 21h5v-5"/></svg></div>
+          <div><b>Regulatory</b><span>NBFC Reg. N-13.01828 · CIN U65990MH2005PTC153374</span></div>
+        </div>
+        <div class="item">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+          <div><b>Office hours</b><span>Monday – Friday, 10:00 AM – 6:00 PM IST</span></div>
+        </div>
+      </div>
+
+      <form class="enq" id="enq" novalidate>
+        <div id="form-ok">Thank you — your enquiry has been noted. We'll be in touch at the email you provided.</div>
+        <div class="two">
+          <div class="field">
+            <label for="f-name">Full name</label>
+            <input id="f-name" name="name" type="text" placeholder="Your name" required>
+          </div>
+          <div class="field">
+            <label for="f-email">Email</label>
+            <input id="f-email" name="email" type="email" placeholder="you@example.com" required>
+          </div>
+        </div>
+        <div class="two">
+          <div class="field">
+            <label for="f-phone">Phone</label>
+            <input id="f-phone" name="phone" type="tel" placeholder="+91 ...">
+          </div>
+          <div class="field">
+            <label for="f-topic">Interested in</label>
+            <select id="f-topic" name="topic">
+              <option>Lending to Microfinance</option>
+              <option>Loans to Parties</option>
+              <option>Investment &amp; Holdings</option>
+              <option>General enquiry</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label for="f-msg">Message</label>
+          <textarea id="f-msg" name="message" rows="4" placeholder="How can we help?"></textarea>
+        </div>
+        <button class="btn btn-primary" type="submit" style="justify-content:center">Submit enquiry</button>
+        <p class="form-note">This form is for demonstration only and does not transmit or store any data.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <div class="fbrand"><span class="mark">T</span> Total Holdings &amp; Finvest</div>
+        <p class="fnote">A privately held, RBI-registered non-banking financial company, serving India's investment and credit needs since 2005 from its base in Mumbai.</p>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#about">About us</a></li>
+          <li><a href="#leadership">Leadership</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li>Lending to Microfinance</li>
+          <li>Loans to Parties</li>
+          <li>Investment &amp; Holdings</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Registered office</h4>
+        <ul>
+          <li>102, 1st Floor, Raja Industrial Estate,</li>
+          <li>P.K. Road, Mulund, Mumbai,</li>
+          <li>Maharashtra 400080, India</li>
+          <li><a href="mailto:info@totalholdings.in">info@totalholdings.in</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="disclaimer">Disclaimer: This website is for informational purposes only and does not constitute an offer, solicitation or advice to invest, borrow or transact. Total Holdings &amp; Finvest Private Limited (CIN U65990MH2005PTC153374) is registered with the Reserve Bank of India as a Non-Banking Financial Company (Reg. No. N-13.01828). RBI does not accept any responsibility for the correctness of statements made or opinions expressed herein, nor does it provide any assurance for repayment of deposits.</p>
+    <div class="fbottom">
+      <span>© 2005–2026 Total Holdings &amp; Finvest Private Limited. All rights reserved.</span>
+      <span>CIN: U65990MH2005PTC153374 · NBFC Reg. N-13.01828</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Contact form — front-end only, no data leaves the page
+  (function(){
+    var f = document.getElementById('enq');
+    var ok = document.getElementById('form-ok');
+    if(!f) return;
+    f.addEventListener('submit', function(e){
+      e.preventDefault();
+      var name = document.getElementById('f-name');
+      var email = document.getElementById('f-email');
+      if(!name.value.trim() || !email.value.trim()){
+        (name.value.trim()? email : name).focus();
+        return;
+      }
+      ok.style.display = 'block';
+      f.reset();
+      ok.scrollIntoView({behavior:'smooth', block:'center'});
+    });
+  })();
+
+  // Close mobile menu after tapping a link
+  (function(){
+    var t = document.getElementById('nav-toggle');
+    document.querySelectorAll('nav.links a').forEach(function(a){
+      a.addEventListener('click', function(){ if(t) t.checked = false; });
+    });
+  })();
+</script>
+
+</body></html>
